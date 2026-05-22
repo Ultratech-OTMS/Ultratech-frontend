@@ -9,7 +9,7 @@ import {
 
 export default function Navbar() {
   const { user, logout } = useAuth();
-  const { cartCount } = useCart();
+  const { cartCount, wishlistCount } = useCart();
   const navigate = useNavigate();
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -81,6 +81,11 @@ export default function Navbar() {
                 <Link to="/wishlist"
                   className="hidden sm:flex text-gray-300 hover:text-yellow-400 transition-colors p-2 relative">
                   <FiHeart size={20} />
+                  {wishlistCount > 0 && (
+                    <span className="absolute -top-0.5 -right-0.5 bg-red-500 text-white text-xs font-bold rounded-full w-4 h-4 flex items-center justify-center">
+                      {wishlistCount > 9 ? '9+' : wishlistCount}
+                    </span>
+                  )}
                 </Link>
 
                 {/* Cart */}

@@ -3,13 +3,16 @@ import { useNavigate } from 'react-router-dom';
 import { useCart } from '../../context/CartContext';
 import toast from 'react-hot-toast';
 import api from '../../services/api';
-import { FiMapPin, FiPhone, FiUser, FiHome, FiNavigation, FiLoader } from 'react-icons/fi';
+import { FiMapPin, FiPhone, FiUser, FiHome, FiNavigation, FiLoader, FiTruck } from 'react-icons/fi';
+
+const TRANSPORT_CHARGE = 5000;
 
 export default function CheckoutPage() {
   const navigate = useNavigate();
   const { cart, clearCart } = useCart();
   const [loading, setLoading] = useState(false);
   const [detecting, setDetecting] = useState(false);
+  const [showTransportModal, setShowTransportModal] = useState(false);
   const [form, setForm] = useState({
     customerName: '', phone: '', address: '', city: '', state: '', pincode: '', location: '', landmark: '',
   });
@@ -73,11 +76,19 @@ export default function CheckoutPage() {
     return true;
   };
 
-  const handlePlaceOrder = async () => {
+  const handlePlaceOrder = () => {
     if (!validate()) return;
+    setShowTransportModal(true);
+  };
+
+  const confirmOrder = async () => {
+    setShowTransportModal(false);
     setLoading(true);
     try {
-      const { data } = await api.post('/orders', { shippingAddress: form });
+      const { data } = await api.post('/orders', {
+        shippingAddress: form,
+        transportationCharge: TRANSPORT_CHARGE,
+      });
       toast.success('Order placed! Our team will contact you for payment.');
       clearCart();
       navigate(`/orders/${data.order._id}`);
@@ -137,10 +148,20 @@ export default function CheckoutPage() {
                   </div>
                 ))}
               </div>
-              <div className="border-t border-gray-100 pt-3">
-                <div className="flex justify-between font-bold text-lg">
+              <div className="border-t border-gray-100 pt-3 space-y-2">
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-600">Subtotal</span>
+                  <span className="text-gray-800">₹{subtotal.toLocaleString('en-IN')}</span>
+                </div>
+                <div className="flex justify-between text-sm">
+                  <span className="text-gray-600 flex items-center gap-1">
+                    <FiTruck size={14} /> Transportation
+                  </span>
+                  <span className="text-gray-800">₹{TRANSPORT_CHARGE.toLocaleString('en-IN')}</span>
+                </div>
+                <div className="flex justify-between font-bold text-lg border-t border-gray-100 pt-2">
                   <span>Total</span>
-                  <span>₹{subtotal.toLocaleString('en-IN')}</span>
+                  <span>₹{(subtotal + TRANSPORT_CHARGE).toLocaleString('en-IN')}</span>
                 </div>
                 <p className="text-xs text-gray-400 mt-2">* Payment will be collected offline after order confirmation</p>
               </div>
@@ -155,6 +176,36 @@ export default function CheckoutPage() {
             </div>
           </div>
         </div>
+        {showTransportModal && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
+            <div className="bg-white rounded-2xl shadow-xl p-6 mx-4 max-w-sm w-full">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="bg-yellow-100 p-3 rounded-full">
+                  <FiTruck className="text-yellow-600" size={24} />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900">Transportation Charge</h3>
+              </div>
+              <p className="text-gray-600 text-sm mb-4">
+                A transportation charge of <strong>₹{TRANSPORT_CHARGE.toLocaleString('en-IN')}</strong> is required
+                for delivering your order. Do you want to proceed?
+              </p>
+              <div className="flex gap-3">
+                <button
+                  onClick={() => setShowTransportModal(false)}
+                  className="flex-1 px-4 py-2.5 border border-gray-300 rounded-xl text-gray-700 font-medium hover:bg-gray-50 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={confirmOrder}
+                  className="flex-1 px-4 py-2.5 bg-yellow-400 hover:bg-yellow-300 rounded-xl text-gray-900 font-bold transition-colors"
+                >
+                  Confirm
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -83,7 +83,8 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  const cartCount = cart.items?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+  const cartCount = cart.items?.length || 0;
+  const wishlistCount = wishlist.products?.length || 0;
   const cartTotal = cart.items?.reduce((sum, item) => {
     const price = item.productId?.price || 0;
     return sum + price * item.quantity;
@@ -94,7 +95,7 @@ export const CartProvider = ({ children }) => {
       cart, wishlist, loading,
       addToCart, updateQuantity, removeFromCart, clearCart,
       toggleWishlist, isInWishlist,
-      cartCount, cartTotal,
+      cartCount, wishlistCount, cartTotal,
       fetchCart, fetchWishlist,
     }}>
       {children}

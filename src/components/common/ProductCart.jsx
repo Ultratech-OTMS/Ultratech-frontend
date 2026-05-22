@@ -35,7 +35,7 @@ export default function ProductCard({ product }) {
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group">
       {/* Image */}
-      <div className="relative overflow-hidden h-52 bg-gray-50">
+      <Link to={`/products/${product._id}`} className="relative overflow-hidden h-52 bg-gray-50 block">
         <img
           src={product.image ? product.image : PLACEHOLDER}
           alt={product.title}
@@ -67,13 +67,15 @@ export default function ProductCard({ product }) {
             <span className="bg-red-500 text-white text-sm font-bold px-3 py-1 rounded-full">Out of Stock</span>
           </div>
         )}
-      </div>
+      </Link>
 
       {/* Content */}
       <div className="p-4">
-        <h3 className="font-semibold text-gray-800 text-sm leading-tight mb-1 line-clamp-2">
-          {product.title}
-        </h3>
+        <Link to={`/products/${product._id}`} className="hover:text-yellow-600 transition-colors">
+          <h3 className="font-semibold text-gray-800 text-sm leading-tight mb-1 line-clamp-2">
+            {product.title}
+          </h3>
+        </Link>
 
         <p className="text-gray-500 text-xs mb-2">{product.weight}</p>
 

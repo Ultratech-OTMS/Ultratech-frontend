@@ -20,7 +20,10 @@ export default function AdminDashboard() {
         setLoading(false);
       }
     };
+
     fetchStats();
+    const interval = setInterval(fetchStats, 15000);
+    return () => clearInterval(interval);
   }, []);
 
   if (loading) return <Loader />;

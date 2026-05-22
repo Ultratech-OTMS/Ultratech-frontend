@@ -5,7 +5,7 @@ const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
-    const stored = localStorage.getItem('ut_user');
+    const stored = sessionStorage.getItem('ut_user');
     return stored ? JSON.parse(stored) : null;
   });
   const [loading, setLoading] = useState(false);
@@ -14,8 +14,8 @@ export const AuthProvider = ({ children }) => {
     setLoading(true);
     try {
       const { data } = await api.post('/auth/login', { email, password });
-      localStorage.setItem('ut_token', data.token);
-      localStorage.setItem('ut_user', JSON.stringify(data.user));
+      sessionStorage.setItem('ut_token', data.token);
+      sessionStorage.setItem('ut_user', JSON.stringify(data.user));
       setUser(data.user);
       return { success: true, user: data.user };
     } catch (err) {
@@ -29,8 +29,8 @@ export const AuthProvider = ({ children }) => {
     setLoading(true);
     try {
       const { data } = await api.post('/auth/register', { name, email, password, phone });
-      localStorage.setItem('ut_token', data.token);
-      localStorage.setItem('ut_user', JSON.stringify(data.user));
+      sessionStorage.setItem('ut_token', data.token);
+      sessionStorage.setItem('ut_user', JSON.stringify(data.user));
       setUser(data.user);
       return { success: true };
     } catch (err) {
@@ -41,13 +41,13 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logout = () => {
-    localStorage.removeItem('ut_token');
-    localStorage.removeItem('ut_user');
+    sessionStorage.removeItem('ut_token');
+    sessionStorage.removeItem('ut_user');
     setUser(null);
   };
 
   const updateUser = (updatedUser) => {
-    localStorage.setItem('ut_user', JSON.stringify(updatedUser));
+    sessionStorage.setItem('ut_user', JSON.stringify(updatedUser));
     setUser(updatedUser);
   };
 
