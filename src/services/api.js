@@ -19,7 +19,8 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response?.status === 401) {
+    // Avoid redirecting (which reloads the page) if the 401 is from the login request itself
+    if (error.response?.status === 401 && !error.config.url.includes('/auth/login')) {
       sessionStorage.removeItem('ut_token');
       sessionStorage.removeItem('ut_user');
       window.location.href = '/login';
