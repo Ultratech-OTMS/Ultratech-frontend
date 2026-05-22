@@ -38,7 +38,7 @@ export default function OrdersPage() {
             description="Place your first order to get started."
             action={
               <Link to="/products"
-                className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-semibold px-6 py-2.5 rounded-xl transition-colors">
+                className="inline-flex items-center gap-2 bg-green-400 hover:bg-green-300 text-gray-900 font-semibold px-6 py-2.5 rounded-xl transition-colors">
                 Browse Products <FiPackage size={16} />
               </Link>
             }
@@ -78,7 +78,7 @@ export default function OrdersPage() {
                 <div className="flex items-center justify-between pt-3 border-t border-gray-100">
                   <p className="font-bold text-gray-800">₹{order.finalAmount?.toLocaleString('en-IN')}</p>
                   <Link to={`/orders/${order._id}`}
-                    className="flex items-center gap-1 text-sm text-yellow-600 hover:text-yellow-700 font-medium transition-colors">
+                    className="flex items-center gap-1 text-sm text-green-600 hover:text-green-700 font-medium transition-colors">
                     <FiEye size={14} /> Track Order
                   </Link>
                 </div>

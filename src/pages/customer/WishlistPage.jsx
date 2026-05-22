@@ -21,7 +21,7 @@ export default function WishlistPage() {
             description="Save your favorite products for later."
             action={
               <Link to="/products"
-                className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-semibold px-6 py-2.5 rounded-xl transition-colors">
+                className="inline-flex items-center gap-2 bg-green-400 hover:bg-green-300 text-gray-900 font-semibold px-6 py-2.5 rounded-xl transition-colors">
                 Browse Products <FiShoppingBag size={16} />
               </Link>
             }
@@ -43,7 +43,7 @@ export default function WishlistPage() {
                     </div>
                   </Link>
                   <div className="p-4">
-                    <Link to={`/products/${product._id}`} className="font-semibold text-gray-800 text-sm hover:text-yellow-600 transition-colors line-clamp-2">
+                    <Link to={`/products/${product._id}`} className="font-semibold text-gray-800 text-sm hover:text-green-600 transition-colors line-clamp-2">
                       {product.title}
                     </Link>
                     <p className="text-gray-500 text-xs mt-1">{product.weight}</p>

@@ -35,20 +35,20 @@ export default function Login() {
   return (
     <div className="min-h-screen bg-gray-900 flex">
       {/* Left brand side */}
-      <div className="hidden lg:flex flex-1 bg-gradient-to-br from-gray-900 via-gray-800 to-yellow-900 items-center justify-center relative overflow-hidden">
+      <div className="hidden lg:flex flex-1 bg-gradient-to-br from-gray-900 via-gray-800 to-green-900 items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           {/* Geometric pattern */}
           {Array.from({ length: 20 }).map((_, i) => (
             <div key={i}
               style={{ left: `${(i % 5) * 25}%`, top: `${Math.floor(i / 5) * 25}%` }}
-              className="absolute w-48 h-48 border border-yellow-400 rotate-45 opacity-30"
+              className="absolute w-48 h-48 border border-green-400 rotate-45 opacity-30"
             />
           ))}
         </div>
         <div className="relative text-center px-12">
-          <div className="text-yellow-400 font-black text-6xl mb-3"
+          <div className="text-green-400 font-black text-6xl mb-3"
             style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
-            ULTRA<span className="text-white">TECH</span>
+            CEMENT<span className="text-white">2STEEL</span>
           </div>
           <p className="text-gray-400 text-lg mb-8">Building India's Future</p>
           <div className="grid grid-cols-2 gap-4 max-w-xs mx-auto">
@@ -70,9 +70,9 @@ export default function Login() {
       {/* Right form side */}
       <div className="flex-1 lg:max-w-md flex items-center justify-center p-8">
         <div className="w-full max-w-sm">
-          <div className="text-yellow-400 font-black text-3xl mb-1 lg:hidden"
+          <div className="text-green-400 font-black text-3xl mb-1 lg:hidden"
             style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
-            ULTRATECH
+            CEMENT2STEEL
           </div>
           <h2 className="text-2xl font-bold text-white mb-1">Welcome back</h2>
           <p className="text-gray-400 text-sm mb-8">Sign in to your account</p>
@@ -89,7 +89,7 @@ export default function Login() {
                   value={form.email}
                   onChange={handleChange}
                   placeholder="you@example.com"
-                  className="w-full bg-gray-800 text-white border border-gray-700 rounded-xl px-4 py-3 pl-10 text-sm focus:outline-none focus:border-yellow-400 transition-colors placeholder-gray-600"
+                  className="w-full bg-gray-800 text-white border border-gray-700 rounded-xl px-4 py-3 pl-10 text-sm focus:outline-none focus:border-green-400 transition-colors placeholder-gray-600"
                 />
               </div>
             </div>
@@ -105,7 +105,7 @@ export default function Login() {
                   value={form.password}
                   onChange={handleChange}
                   placeholder="••••••••"
-                  className="w-full bg-gray-800 text-white border border-gray-700 rounded-xl px-4 py-3 pl-10 pr-10 text-sm focus:outline-none focus:border-yellow-400 transition-colors placeholder-gray-600"
+                  className="w-full bg-gray-800 text-white border border-gray-700 rounded-xl px-4 py-3 pl-10 pr-10 text-sm focus:outline-none focus:border-green-400 transition-colors placeholder-gray-600"
                 />
                 <button type="button" onClick={() => setShowPass(!showPass)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300">
@@ -117,7 +117,7 @@ export default function Login() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold py-3 rounded-xl transition-all disabled:opacity-50 text-sm"
+              className="w-full bg-green-400 hover:bg-green-300 text-gray-900 font-bold py-3 rounded-xl transition-all disabled:opacity-50 text-sm"
             >
               {loading ? 'Signing in...' : 'Sign In'}
             </button>
@@ -127,15 +127,15 @@ export default function Login() {
           <div className="mt-6 bg-gray-800 rounded-xl p-4 border border-gray-700">
             <p className="text-xs text-gray-400 font-semibold mb-2 uppercase tracking-wider">Demo Accounts</p>
             <div className="space-y-1 text-xs">
-              <p className="text-gray-300">🛒 Customer: <span className="text-yellow-400">customer@ultratech.com</span> / customer123</p>
-              <p className="text-gray-300">⚙️ Admin: <span className="text-yellow-400">admin@ultratech.com</span> / admin123</p>
-              <p className="text-gray-300">🚚 Driver: <span className="text-yellow-400">driver@ultratech.com</span> / driver123</p>
+              <p className="text-gray-300">🛒 Customer: <span className="text-green-400">customer@cementandsteel.com</span> / customer123</p>
+              <p className="text-gray-300">⚙️ Admin: <span className="text-green-400">admin@cementandsteel.com</span> / admin123</p>
+              <p className="text-gray-300">🚚 Driver: <span className="text-green-400">driver@cementandsteel.com</span> / driver123</p>
             </div>
           </div>
 
           <p className="mt-6 text-center text-sm text-gray-500">
             Don't have an account?{' '}
-            <Link to="/register" className="text-yellow-400 hover:text-yellow-300 font-semibold">
+            <Link to="/register" className="text-green-400 hover:text-green-300 font-semibold">
               Register
             </Link>
           </p>

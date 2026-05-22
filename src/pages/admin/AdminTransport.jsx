@@ -58,7 +58,7 @@ export default function AdminTransport() {
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-bold text-gray-800">Transport Management</h2>
         <button onClick={openAssign}
-          className="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-semibold px-4 py-2 rounded-lg text-sm transition-colors">
+          className="flex items-center gap-2 bg-green-400 hover:bg-green-300 text-gray-900 font-semibold px-4 py-2 rounded-lg text-sm transition-colors">
           <FiTruck size={16} /> Assign Transport
         </button>
       </div>
@@ -114,7 +114,7 @@ export default function AdminTransport() {
             <select
               value={form.orderId}
               onChange={(e) => setForm({ ...form, orderId: e.target.value })}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400"
             >
               <option value="">Select order...</option>
               {orders.map((o) => (
@@ -129,7 +129,7 @@ export default function AdminTransport() {
             <select
               value={form.driverId}
               onChange={(e) => setForm({ ...form, driverId: e.target.value })}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400"
             >
               <option value="">Select driver...</option>
               {staff.map((s) => (
@@ -142,26 +142,26 @@ export default function AdminTransport() {
               <label className="block text-sm font-medium text-gray-700 mb-1">Vehicle Number</label>
               <input type="text" value={form.vehicleNumber}
                 onChange={(e) => setForm({ ...form, vehicleNumber: e.target.value })}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400" />
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Vehicle Type</label>
               <input type="text" value={form.vehicleType}
                 onChange={(e) => setForm({ ...form, vehicleType: e.target.value })}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400" />
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400" />
             </div>
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Estimated Delivery</label>
             <input type="date" value={form.estimatedDelivery}
               onChange={(e) => setForm({ ...form, estimatedDelivery: e.target.value })}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400" />
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400" />
           </div>
           <div className="flex justify-end gap-3 pt-2">
             <button onClick={() => setAssignModal(false)}
               className="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg">Cancel</button>
             <button onClick={handleAssign}
-              className="px-6 py-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-semibold text-sm rounded-lg">
+              className="px-6 py-2 bg-green-400 hover:bg-green-300 text-gray-900 font-semibold text-sm rounded-lg">
               Assign
             </button>
           </div>

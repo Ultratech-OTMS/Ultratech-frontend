@@ -43,13 +43,13 @@ export default function AdminUsers() {
             value={search}
             onChange={(e) => { setSearch(e.target.value); setPage(1); }}
             placeholder="Search by name or email..."
-            className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 pl-10 text-sm focus:outline-none focus:border-yellow-400"
+            className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 pl-10 text-sm focus:outline-none focus:border-green-400"
           />
         </div>
         <select
           value={roleFilter}
           onChange={(e) => { setRoleFilter(e.target.value); setPage(1); }}
-          className="bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400"
+          className="bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400"
         >
           <option value="All">All Roles</option>
           <option value="customer">Customer</option>

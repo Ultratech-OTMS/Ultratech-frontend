@@ -63,13 +63,13 @@ export default function AdminOrders() {
             value={search}
             onChange={(e) => { setSearch(e.target.value); setPage(1); }}
             placeholder="Search by customer name or phone..."
-            className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 pl-10 text-sm focus:outline-none focus:border-yellow-400"
+            className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2 pl-10 text-sm focus:outline-none focus:border-green-400"
           />
         </div>
         <select
           value={statusFilter}
           onChange={(e) => { setStatusFilter(e.target.value); setPage(1); }}
-          className="bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400"
+          className="bg-white border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400"
         >
           {orderStatuses.map((s) => <option key={s} value={s}>{s}</option>)}
         </select>
@@ -108,11 +108,11 @@ export default function AdminOrders() {
                       <td className="px-4 py-3">
                         <div className="flex gap-2">
                           <button onClick={() => { setSelectedOrder(o); setDetailModal(true); }}
-                            className="p-1.5 text-gray-400 hover:text-yellow-600 transition-colors" title="View">
+                            className="p-1.5 text-gray-400 hover:text-green-600 transition-colors" title="View">
                             <FiEye size={15} />
                           </button>
                           <button onClick={() => openStatusModal(o)}
-                            className="px-3 py-1 bg-yellow-400 hover:bg-yellow-300 text-gray-900 text-xs font-semibold rounded-lg transition-colors">
+                            className="px-3 py-1 bg-green-400 hover:bg-green-300 text-gray-900 text-xs font-semibold rounded-lg transition-colors">
                             Update
                           </button>
                         </div>
@@ -186,7 +186,7 @@ export default function AdminOrders() {
             <select
               value={statusForm.orderStatus}
               onChange={(e) => setStatusForm({ ...statusForm, orderStatus: e.target.value })}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400"
             >
               {orderStatuses.filter(s => s !== 'All').map((s) => (
                 <option key={s} value={s}>{s}</option>
@@ -198,7 +198,7 @@ export default function AdminOrders() {
             <textarea
               value={statusForm.note}
               onChange={(e) => setStatusForm({ ...statusForm, note: e.target.value })}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400" rows={2}
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400" rows={2}
             />
           </div>
           <div>
@@ -206,7 +206,7 @@ export default function AdminOrders() {
             <select
               value={statusForm.assignedDriver}
               onChange={(e) => setStatusForm({ ...statusForm, assignedDriver: e.target.value })}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400"
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400"
             >
               <option value="">Select driver...</option>
               {transportStaff.map((s) => (
@@ -218,7 +218,7 @@ export default function AdminOrders() {
             <button onClick={() => setStatusModal(false)}
               className="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg">Cancel</button>
             <button onClick={updateStatus}
-              className="px-6 py-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-semibold text-sm rounded-lg">
+              className="px-6 py-2 bg-green-400 hover:bg-green-300 text-gray-900 font-semibold text-sm rounded-lg">
               Update
             </button>
           </div>

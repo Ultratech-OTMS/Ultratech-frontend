@@ -116,7 +116,7 @@ export default function CheckoutPage() {
           <div className="lg:col-span-3">
             <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
               <h2 className="text-lg font-bold text-gray-800 mb-6 flex items-center gap-2">
-                <FiMapPin className="text-yellow-500" /> Shipping Address
+                <FiMapPin className="text-green-500" /> Shipping Address
               </h2>
               <div className="space-y-4">
                 <FormField label="Full Name" icon={FiUser} name="customerName" placeholder="Rahul Verma" value={form.customerName} onChange={handleChange} />
@@ -168,7 +168,7 @@ export default function CheckoutPage() {
               <button
                 onClick={handlePlaceOrder}
                 disabled={loading}
-                className="mt-6 w-full bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold py-3 rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2"
+                className="mt-6 w-full bg-green-400 hover:bg-green-300 text-gray-900 font-bold py-3 rounded-xl transition-all disabled:opacity-50 flex items-center justify-center gap-2"
               >
                 {loading && <FiLoader className="animate-spin" size={16} />}
                 {loading ? 'Placing Order...' : 'Place Order'}
@@ -180,8 +180,8 @@ export default function CheckoutPage() {
           <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
             <div className="bg-white rounded-2xl shadow-xl p-6 mx-4 max-w-sm w-full">
               <div className="flex items-center gap-3 mb-4">
-                <div className="bg-yellow-100 p-3 rounded-full">
-                  <FiTruck className="text-yellow-600" size={24} />
+                <div className="bg-green-100 p-3 rounded-full">
+                  <FiTruck className="text-green-600" size={24} />
                 </div>
                 <h3 className="text-lg font-bold text-gray-900">Transportation Charge</h3>
               </div>
@@ -198,7 +198,7 @@ export default function CheckoutPage() {
                 </button>
                 <button
                   onClick={confirmOrder}
-                  className="flex-1 px-4 py-2.5 bg-yellow-400 hover:bg-yellow-300 rounded-xl text-gray-900 font-bold transition-colors"
+                  className="flex-1 px-4 py-2.5 bg-green-400 hover:bg-green-300 rounded-xl text-gray-900 font-bold transition-colors"
                 >
                   Confirm
                 </button>
@@ -220,7 +220,7 @@ function FormField({ label, icon: Icon, name, placeholder, type = 'text', hint, 
         {name === 'location' ? (
           <div className="flex gap-2">
             <input type={type} name={name} value={value} onChange={onChange} placeholder={placeholder}
-              className="flex-1 bg-white border border-gray-300 rounded-lg px-4 py-2.5 pl-10 text-sm focus:outline-none focus:border-yellow-400 transition-colors" />
+              className="flex-1 bg-white border border-gray-300 rounded-lg px-4 py-2.5 pl-10 text-sm focus:outline-none focus:border-green-400 transition-colors" />
             <button type="button" onClick={onDetect} disabled={detecting || !value}
               className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-50 whitespace-nowrap">
               {detecting ? <FiLoader className="animate-spin" size={16} /> : 'Detect'}
@@ -229,7 +229,7 @@ function FormField({ label, icon: Icon, name, placeholder, type = 'text', hint, 
         ) : name === 'pincode' ? (
           <div className="flex gap-2">
             <input type={type} name={name} value={value} onChange={onChange} placeholder={placeholder} maxLength={6}
-              className="flex-1 bg-white border border-gray-300 rounded-lg px-4 py-2.5 pl-10 text-sm focus:outline-none focus:border-yellow-400 transition-colors" />
+              className="flex-1 bg-white border border-gray-300 rounded-lg px-4 py-2.5 pl-10 text-sm focus:outline-none focus:border-green-400 transition-colors" />
             {value?.length === 6 && (
               <button type="button" onClick={onDetect} disabled={detecting}
                 className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-2 rounded-lg text-sm font-medium transition-colors disabled:opacity-50 whitespace-nowrap">
@@ -239,7 +239,7 @@ function FormField({ label, icon: Icon, name, placeholder, type = 'text', hint, 
           </div>
         ) : (
           <input type={type} name={name} value={value} onChange={onChange} placeholder={placeholder}
-            className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2.5 pl-10 text-sm focus:outline-none focus:border-yellow-400 transition-colors" />
+            className="w-full bg-white border border-gray-300 rounded-lg px-4 py-2.5 pl-10 text-sm focus:outline-none focus:border-green-400 transition-colors" />
         )}
       </div>
       {hint && <p className="text-gray-400 text-xs mt-1">{hint}</p>}

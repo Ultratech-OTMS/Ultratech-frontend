@@ -29,22 +29,22 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-yellow-900 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-green-900 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-20 left-10 w-64 h-64 border border-yellow-400 rotate-45" />
-          <div className="absolute bottom-20 right-10 w-96 h-96 border border-yellow-400 rotate-12" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-yellow-400/30 rotate-[30deg]" />
+          <div className="absolute top-20 left-10 w-64 h-64 border border-green-400 rotate-45" />
+          <div className="absolute bottom-20 right-10 w-96 h-96 border border-green-400 rotate-12" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-green-400/30 rotate-[30deg]" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-20 md:py-32">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-yellow-400/10 border border-yellow-400/30 rounded-full px-4 py-1.5 mb-6">
-              <span className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse" />
-              <span className="text-yellow-400 text-xs font-semibold uppercase tracking-wider">India's #1 Construction Brand</span>
+            <div className="inline-flex items-center gap-2 bg-green-400/10 border border-green-400/30 rounded-full px-4 py-1.5 mb-6">
+              <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+              <span className="text-green-400 text-xs font-semibold uppercase tracking-wider">India's #1 Construction Brand</span>
             </div>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-4"
               style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
               Building India's<br />
-              <span className="text-yellow-400">Stronger Future</span>
+              <span className="text-green-400">Stronger Future</span>
             </h1>
             <p className="text-gray-400 text-lg md:text-xl mb-8 max-w-xl">
               Premium construction materials delivered to your doorstep. 
@@ -60,11 +60,11 @@ export default function HomePage() {
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search products..."
-                  className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 rounded-xl px-4 py-3.5 pl-12 text-sm focus:outline-none focus:border-yellow-400 transition-colors"
+                  className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 rounded-xl px-4 py-3.5 pl-12 text-sm focus:outline-none focus:border-green-400 transition-colors"
                 />
               </div>
               <Link to={`/products?search=${encodeURIComponent(search)}`}
-                className="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-8 py-3.5 rounded-xl text-sm transition-all flex items-center justify-center gap-2 whitespace-nowrap">
+                className="bg-green-400 hover:bg-green-300 text-gray-900 font-bold px-8 py-3.5 rounded-xl text-sm transition-all flex items-center justify-center gap-2 whitespace-nowrap">
                 Search <FiArrowRight size={16} />
               </Link>
             </div>
@@ -102,10 +102,10 @@ export default function HomePage() {
               <Link
                 key={cat.name}
                 to={`/products?category=${cat.name}`}
-                className="group bg-gray-50 hover:bg-yellow-50 border border-gray-100 hover:border-yellow-200 rounded-2xl p-6 text-center transition-all duration-300"
+                className="group bg-gray-50 hover:bg-green-50 border border-gray-100 hover:border-green-200 rounded-2xl p-6 text-center transition-all duration-300"
               >
                 <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">{cat.image}</div>
-                <h3 className="font-bold text-gray-800 text-sm group-hover:text-yellow-600 transition-colors">{cat.name}</h3>
+                <h3 className="font-bold text-gray-800 text-sm group-hover:text-green-600 transition-colors">{cat.name}</h3>
                 <p className="text-gray-400 text-xs mt-1">{cat.desc}</p>
               </Link>
             ))}
@@ -125,7 +125,7 @@ export default function HomePage() {
               <p className="text-gray-500 mt-1">Most popular construction materials</p>
             </div>
             <Link to="/products"
-              className="hidden sm:flex items-center gap-1 text-gray-600 hover:text-yellow-600 font-medium text-sm transition-colors">
+              className="hidden sm:flex items-center gap-1 text-gray-600 hover:text-green-600 font-medium text-sm transition-colors">
               View All <FiArrowRight size={14} />
             </Link>
           </div>
@@ -140,7 +140,7 @@ export default function HomePage() {
           )}
           <div className="text-center mt-8 sm:hidden">
             <Link to="/products"
-              className="inline-flex items-center gap-1 text-yellow-600 font-medium text-sm">
+              className="inline-flex items-center gap-1 text-green-600 font-medium text-sm">
               View All Products <FiArrowRight size={14} />
             </Link>
           </div>
@@ -158,8 +158,8 @@ export default function HomePage() {
               { icon: FiHeadphones, title: '24/7 Support', desc: 'Dedicated customer care' },
             ].map(({ icon: Icon, title, desc }) => (
               <div key={title} className="text-center p-6">
-                <div className="w-14 h-14 bg-yellow-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                  <Icon className="text-yellow-600" size={24} />
+                <div className="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <Icon className="text-green-600" size={24} />
                 </div>
                 <h3 className="font-bold text-gray-800 mb-1">{title}</h3>
                 <p className="text-gray-500 text-sm">{desc}</p>
@@ -181,11 +181,11 @@ export default function HomePage() {
           </p>
           <div className="flex gap-4 justify-center flex-col sm:flex-row">
             <Link to="/products"
-              className="bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold px-8 py-3 rounded-xl transition-colors">
+              className="bg-green-400 hover:bg-green-300 text-gray-900 font-bold px-8 py-3 rounded-xl transition-colors">
               Browse Products
             </Link>
             <Link to="/register"
-              className="border border-gray-600 text-gray-300 hover:border-yellow-400 hover:text-yellow-400 font-semibold px-8 py-3 rounded-xl transition-colors">
+              className="border border-gray-600 text-gray-300 hover:border-green-400 hover:text-green-400 font-semibold px-8 py-3 rounded-xl transition-colors">
               Create Account
             </Link>
           </div>

@@ -87,7 +87,7 @@ export default function AdminProducts() {
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-bold text-gray-800">Products</h2>
         <button onClick={openCreate}
-          className="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-semibold px-4 py-2 rounded-lg text-sm transition-colors">
+          className="flex items-center gap-2 bg-green-400 hover:bg-green-300 text-gray-900 font-semibold px-4 py-2 rounded-lg text-sm transition-colors">
           <FiPlus size={16} /> Add Product
         </button>
       </div>
@@ -99,7 +99,7 @@ export default function AdminProducts() {
           value={search}
           onChange={(e) => { setSearch(e.target.value); setPage(1); }}
           placeholder="Search products..."
-          className="w-full max-w-md bg-white border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-yellow-400"
+          className="w-full max-w-md bg-white border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-green-400"
         />
       </div>
 
@@ -145,7 +145,7 @@ export default function AdminProducts() {
                       <td className="px-4 py-3">{p.isFeatured ? '⭐' : '—'}</td>
                       <td className="px-4 py-3">
                         <div className="flex gap-2">
-                          <button onClick={() => openEdit(p)} className="p-1.5 text-gray-400 hover:text-yellow-600 transition-colors">
+                          <button onClick={() => openEdit(p)} className="p-1.5 text-gray-400 hover:text-green-600 transition-colors">
                             <FiEdit2 size={15} />
                           </button>
                           <button onClick={() => handleDelete(p._id)} className="p-1.5 text-gray-400 hover:text-red-600 transition-colors">
@@ -170,34 +170,34 @@ export default function AdminProducts() {
             <div className="col-span-2">
               <label className="block text-sm font-medium text-gray-700 mb-1">Title</label>
               <input type="text" value={form.title} onChange={(e) => setForm({ ...form, title: e.target.value })}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400" required />
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400" required />
             </div>
             <div className="col-span-2">
               <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
               <textarea value={form.description} onChange={(e) => setForm({ ...form, description: e.target.value })}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400" rows={3} required />
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400" rows={3} required />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Category</label>
               <select value={form.category} onChange={(e) => setForm({ ...form, category: e.target.value })}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400">
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400">
                 {categories.map((c) => <option key={c} value={c}>{c}</option>)}
               </select>
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Weight</label>
               <input type="text" value={form.weight} onChange={(e) => setForm({ ...form, weight: e.target.value })}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400" required />
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400" required />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Price (₹)</label>
               <input type="number" value={form.price} onChange={(e) => setForm({ ...form, price: e.target.value })}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400" min={0} required />
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400" min={0} required />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Stock</label>
               <input type="number" value={form.stock} onChange={(e) => setForm({ ...form, stock: e.target.value })}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400" min={0} required />
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400" min={0} required />
             </div>
             <div className="col-span-2">
               <label className="block text-sm font-medium text-gray-700 mb-1">Image</label>
@@ -214,7 +214,7 @@ export default function AdminProducts() {
             <button type="button" onClick={() => setModalOpen(false)}
               className="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">Cancel</button>
             <button type="submit" disabled={saving}
-              className="px-6 py-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-semibold text-sm rounded-lg transition-colors disabled:opacity-50">
+              className="px-6 py-2 bg-green-400 hover:bg-green-300 text-gray-900 font-semibold text-sm rounded-lg transition-colors disabled:opacity-50">
               {saving ? 'Saving...' : editing ? 'Update' : 'Create'}
             </button>
           </div>

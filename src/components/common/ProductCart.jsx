@@ -46,7 +46,7 @@ export default function ProductCard({ product }) {
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors" />
 
         {/* Category badge */}
-        <span className="absolute top-3 left-3 bg-yellow-400 text-gray-900 text-xs font-bold px-2 py-1 rounded-full">
+        <span className="absolute top-3 left-3 bg-green-400 text-gray-900 text-xs font-bold px-2 py-1 rounded-full">
           {product.category}
         </span>
 
@@ -71,7 +71,7 @@ export default function ProductCard({ product }) {
 
       {/* Content */}
       <div className="p-4">
-        <Link to={`/products/${product._id}`} className="hover:text-yellow-600 transition-colors">
+        <Link to={`/products/${product._id}`} className="hover:text-green-600 transition-colors">
           <h3 className="font-semibold text-gray-800 text-sm leading-tight mb-1 line-clamp-2">
             {product.title}
           </h3>
@@ -81,7 +81,7 @@ export default function ProductCard({ product }) {
 
         {/* Rating */}
         <div className="flex items-center gap-1 mb-3">
-          <FiStar className="text-yellow-400 fill-current" size={12} />
+          <FiStar className="text-green-400 fill-current" size={12} />
           <span className="text-xs text-gray-600 font-medium">{product.ratings}</span>
           <span className="text-xs text-gray-400">({product.numReviews})</span>
         </div>
@@ -94,14 +94,14 @@ export default function ProductCard({ product }) {
           </div>
           <div className="flex gap-2">
             <Link to={`/products/${product._id}`}
-              className="w-9 h-9 border border-gray-200 rounded-lg flex items-center justify-center text-gray-500 hover:border-yellow-400 hover:text-yellow-600 transition-colors">
+              className="w-9 h-9 border border-gray-200 rounded-lg flex items-center justify-center text-gray-500 hover:border-green-400 hover:text-green-600 transition-colors">
               <FiEye size={15} />
             </Link>
             {user?.role === 'customer' && (
               <button
                 onClick={handleAddToCart}
                 disabled={adding || product.stock === 0}
-                className="flex items-center gap-1.5 bg-gray-900 hover:bg-yellow-400 text-white hover:text-gray-900 text-xs font-semibold px-3 py-2 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                className="flex items-center gap-1.5 bg-gray-900 hover:bg-green-400 text-white hover:text-gray-900 text-xs font-semibold px-3 py-2 rounded-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <FiShoppingCart size={13} />
                 {adding ? '...' : 'Add'}

@@ -53,7 +53,7 @@ export default function TransportDeliveries() {
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-bold text-gray-800">My Deliveries</h2>
         <button onClick={fetchDeliveries}
-          className="flex items-center gap-1 text-gray-500 hover:text-yellow-600 text-sm transition-colors">
+          className="flex items-center gap-1 text-gray-500 hover:text-green-600 text-sm transition-colors">
           <FiRefreshCw size={14} /> Refresh
         </button>
       </div>
@@ -104,7 +104,7 @@ export default function TransportDeliveries() {
                     <div className="space-y-1">
                       {d.statusUpdates.map((u, i) => (
                         <div key={i} className="flex items-start gap-2 text-xs text-gray-500">
-                          <span className="w-2 h-2 rounded-full bg-yellow-400 mt-1.5 flex-shrink-0" />
+                          <span className="w-2 h-2 rounded-full bg-green-400 mt-1.5 flex-shrink-0" />
                           <div>
                             <span className="font-medium text-gray-700">{u.status}</span>
                             {u.remarks && <span> — {u.remarks}</span>}
@@ -119,7 +119,7 @@ export default function TransportDeliveries() {
 
                 {d.status !== 'Delivered' && d.status !== 'Delivery Failed' && (
                   <button onClick={() => openUpdate(d)}
-                    className="w-full bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-semibold py-2.5 rounded-xl text-sm transition-colors">
+                    className="w-full bg-green-400 hover:bg-green-300 text-gray-900 font-semibold py-2.5 rounded-xl text-sm transition-colors">
                     Update Status
                   </button>
                 )}
@@ -140,7 +140,7 @@ export default function TransportDeliveries() {
                 <select
                   value={statusForm.status}
                   onChange={(e) => setStatusForm({ ...statusForm, status: e.target.value })}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400"
                 >
                   {statusOptions.map((s) => (
                     <option key={s} value={s}>{s}</option>
@@ -152,7 +152,7 @@ export default function TransportDeliveries() {
                 <textarea
                   value={statusForm.remarks}
                   onChange={(e) => setStatusForm({ ...statusForm, remarks: e.target.value })}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400"
                   rows={2} placeholder="Any remarks..."
                 />
               </div>
@@ -162,7 +162,7 @@ export default function TransportDeliveries() {
                   type="text"
                   value={statusForm.location}
                   onChange={(e) => setStatusForm({ ...statusForm, location: e.target.value })}
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400"
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400"
                   placeholder="Current location..."
                 />
               </div>
@@ -170,7 +170,7 @@ export default function TransportDeliveries() {
                 <button onClick={() => setUpdating(null)}
                   className="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg">Cancel</button>
                 <button onClick={handleUpdate}
-                  className="px-6 py-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-semibold text-sm rounded-lg">
+                  className="px-6 py-2 bg-green-400 hover:bg-green-300 text-gray-900 font-semibold text-sm rounded-lg">
                   Update
                 </button>
               </div>

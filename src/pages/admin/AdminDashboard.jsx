@@ -41,7 +41,7 @@ export default function AdminDashboard() {
           title="Pending Orders"
           value={stats?.pendingOrders || 0}
           icon={<FiClock size={22} />}
-          color="yellow"
+          color="green"
         />
         <StatCard
           title="Delivered"
@@ -87,7 +87,7 @@ export default function AdminDashboard() {
                         order.orderStatus === 'Delivered' ? 'bg-green-100 text-green-700' :
                         order.orderStatus === 'Cancelled' ? 'bg-red-100 text-red-700' :
                         order.orderStatus === 'Placed' ? 'bg-blue-100 text-blue-700' :
-                        'bg-yellow-100 text-yellow-700'
+                        'bg-green-100 text-green-700'
                       }`}>{order.orderStatus}</span>
                     </td>
                     <td className="py-3 text-gray-500 text-xs">{new Date(order.createdAt).toLocaleDateString('en-IN')}</td>

@@ -41,8 +41,8 @@ export default function AdminLayout() {
         {/* Logo */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-gray-700">
           <div>
-            <div className="text-yellow-400 font-black text-xl tracking-tight" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
-              ULTRATECH
+            <div className="text-green-400 font-black text-xl tracking-tight" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
+              CEMENT2STEEL
             </div>
             <div className="text-gray-400 text-xs uppercase tracking-widest">Admin Panel</div>
           </div>
@@ -62,7 +62,7 @@ export default function AdminLayout() {
               className={({ isActive }) =>
                 `flex items-center gap-3 px-4 py-3 rounded-lg mb-1 text-sm font-medium transition-all group
                 ${isActive
-                  ? 'bg-yellow-400 text-gray-900'
+                  ? 'bg-green-400 text-gray-900'
                   : 'text-gray-400 hover:bg-gray-800 hover:text-white'
                 }`
               }
@@ -77,7 +77,7 @@ export default function AdminLayout() {
         {/* User info + logout */}
         <div className="px-4 py-4 border-t border-gray-700">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-9 h-9 rounded-full bg-yellow-400 flex items-center justify-center text-gray-900 font-bold text-sm">
+            <div className="w-9 h-9 rounded-full bg-green-400 flex items-center justify-center text-gray-900 font-bold text-sm">
               {user?.name?.charAt(0).toUpperCase()}
             </div>
             <div>
@@ -107,7 +107,7 @@ export default function AdminLayout() {
           </button>
           <h1 className="text-gray-800 font-semibold text-lg">Admin Dashboard</h1>
           <div className="ml-auto flex items-center gap-2">
-            <span className="bg-yellow-100 text-yellow-800 text-xs font-medium px-2.5 py-1 rounded-full">
+            <span className="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-1 rounded-full">
               Admin
             </span>
           </div>

@@ -23,8 +23,8 @@ export default function TransportLayout() {
         ${open ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}`}>
         <div className="flex items-center justify-between px-6 py-5 border-b border-gray-700">
           <div>
-            <div className="text-yellow-400 font-black text-xl" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
-              ULTRATECH
+            <div className="text-green-400 font-black text-xl" style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
+              CEMENT2STEEL
             </div>
             <div className="text-gray-400 text-xs uppercase tracking-widest">Transport Portal</div>
           </div>
@@ -42,7 +42,7 @@ export default function TransportLayout() {
               onClick={() => setOpen(false)}
               className={({ isActive }) =>
                 `flex items-center gap-3 px-4 py-3 rounded-lg mb-1 text-sm font-medium transition-all
-                ${isActive ? 'bg-yellow-400 text-gray-900' : 'text-gray-400 hover:bg-gray-800 hover:text-white'}`
+                ${isActive ? 'bg-green-400 text-gray-900' : 'text-gray-400 hover:bg-gray-800 hover:text-white'}`
               }
             >
               <Icon size={18} />
@@ -53,7 +53,7 @@ export default function TransportLayout() {
 
         <div className="px-4 py-4 border-t border-gray-700">
           <div className="flex items-center gap-3 mb-3">
-            <div className="w-9 h-9 rounded-full bg-yellow-400 flex items-center justify-center text-gray-900 font-bold text-sm">
+            <div className="w-9 h-9 rounded-full bg-green-400 flex items-center justify-center text-gray-900 font-bold text-sm">
               {user?.name?.charAt(0).toUpperCase()}
             </div>
             <div>

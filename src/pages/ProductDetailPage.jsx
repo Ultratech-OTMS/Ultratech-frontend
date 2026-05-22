@@ -52,11 +52,11 @@ export default function ProductDetailPage() {
       <div className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
           <div className="flex items-center gap-2 text-sm text-gray-500">
-            <Link to="/" className="hover:text-yellow-600">Home</Link>
+            <Link to="/" className="hover:text-green-600">Home</Link>
             <FiChevronRight size={12} />
-            <Link to="/products" className="hover:text-yellow-600">Products</Link>
+            <Link to="/products" className="hover:text-green-600">Products</Link>
             <FiChevronRight size={12} />
-            <Link to={`/products?category=${product.category}`} className="hover:text-yellow-600">{product.category}</Link>
+            <Link to={`/products?category=${product.category}`} className="hover:text-green-600">{product.category}</Link>
             <FiChevronRight size={12} />
             <span className="text-gray-800 font-medium truncate">{product.title}</span>
           </div>
@@ -78,7 +78,7 @@ export default function ProductDetailPage() {
 
             {/* Details */}
             <div className="p-8 md:p-12 flex flex-col">
-              <span className="inline-flex items-center gap-1 bg-yellow-50 text-yellow-700 text-xs font-bold px-3 py-1 rounded-full w-fit mb-4">
+              <span className="inline-flex items-center gap-1 bg-green-50 text-green-700 text-xs font-bold px-3 py-1 rounded-full w-fit mb-4">
                 <FiTag size={12} /> {product.category}
               </span>
 
@@ -90,7 +90,7 @@ export default function ProductDetailPage() {
                 <div className="flex items-center gap-0.5">
                   {[1, 2, 3, 4, 5].map((star) => (
                     <FiStar key={star} size={14}
-                      className={`${star <= Math.round(product.ratings) ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`}
+                      className={`${star <= Math.round(product.ratings) ? 'text-green-400 fill-green-400' : 'text-gray-300'}`}
                     />
                   ))}
                 </div>
@@ -141,7 +141,7 @@ export default function ProductDetailPage() {
                     <button
                       onClick={handleAddToCart}
                       disabled={adding}
-                      className="flex-1 flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold py-3 rounded-xl transition-all disabled:opacity-50"
+                      className="flex-1 flex items-center justify-center gap-2 bg-green-400 hover:bg-green-300 text-gray-900 font-bold py-3 rounded-xl transition-all disabled:opacity-50"
                     >
                       <FiShoppingCart size={18} />
                       {adding ? 'Adding...' : 'Add to Cart'}

@@ -35,7 +35,7 @@ export default function Register() {
     if (Object.keys(errs).length > 0) { setErrors(errs); return; }
     const res = await register(form.name, form.email, form.password, form.phone);
     if (res.success) {
-      toast.success('Account created! Welcome to UltraTech!');
+      toast.success('Account created! Welcome to Cement&Steel!');
       navigate('/');
     } else {
       toast.error(res.message);
@@ -45,13 +45,13 @@ export default function Register() {
   return (
     <div className="min-h-screen bg-gray-900 flex items-center justify-center p-6">
       <div className="w-full max-w-md">
-        <Link to="/" className="text-yellow-400 font-black text-3xl block mb-8"
+        <Link to="/" className="text-green-400 font-black text-3xl block mb-8"
           style={{ fontFamily: 'Barlow Condensed, sans-serif' }}>
-          ULTRA<span className="text-white">TECH</span>
+          CEMENT<span className="text-white">2STEEL</span>
         </Link>
 
         <h2 className="text-2xl font-bold text-white mb-1">Create your account</h2>
-        <p className="text-gray-400 text-sm mb-8">Join thousands of builders on UltraTech</p>
+        <p className="text-gray-400 text-sm mb-8">Join thousands of builders on Cement2Steel</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <Field icon={FiUser} label="Full Name" name="name" placeholder="Rahul Verma" value={form.name} onChange={handleChange} error={errors.name} />
@@ -72,14 +72,14 @@ export default function Register() {
             value={form.confirm} onChange={handleChange} error={errors.confirm} />
 
           <button type="submit" disabled={loading}
-            className="w-full bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold py-3 rounded-xl transition-all disabled:opacity-50 text-sm">
+            className="w-full bg-green-400 hover:bg-green-300 text-gray-900 font-bold py-3 rounded-xl transition-all disabled:opacity-50 text-sm">
             {loading ? 'Creating account...' : 'Create Account'}
           </button>
         </form>
 
         <p className="mt-6 text-center text-sm text-gray-500">
           Already have an account?{' '}
-          <Link to="/login" className="text-yellow-400 hover:text-yellow-300 font-semibold">Sign in</Link>
+          <Link to="/login" className="text-green-400 hover:text-green-300 font-semibold">Sign in</Link>
         </p>
       </div>
     </div>
@@ -93,7 +93,7 @@ function Field({ icon: Icon, label, name, type = 'text', placeholder, right, val
       <div className="relative">
         <Icon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
         <input type={type} name={name} value={value} onChange={onChange} placeholder={placeholder}
-          className={`w-full bg-gray-800 text-white border rounded-xl px-4 py-3 pl-10 ${right ? 'pr-10' : ''} text-sm focus:outline-none focus:border-yellow-400 transition-colors placeholder-gray-600 ${error ? 'border-red-500' : 'border-gray-700'}`}
+          className={`w-full bg-gray-800 text-white border rounded-xl px-4 py-3 pl-10 ${right ? 'pr-10' : ''} text-sm focus:outline-none focus:border-green-400 transition-colors placeholder-gray-600 ${error ? 'border-red-500' : 'border-gray-700'}`}
         />
         {right}
       </div>

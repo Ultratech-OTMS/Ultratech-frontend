@@ -54,7 +54,7 @@ export default function CartPage() {
             description="Browse our products and add items to your cart."
             action={
               <Link to="/products"
-                className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-semibold px-6 py-2.5 rounded-xl transition-colors">
+                className="inline-flex items-center gap-2 bg-green-400 hover:bg-green-300 text-gray-900 font-semibold px-6 py-2.5 rounded-xl transition-colors">
                 Browse Products <FiShoppingBag size={16} />
               </Link>
             }
@@ -75,7 +75,7 @@ export default function CartPage() {
                       onError={(e) => { e.target.src = 'https://via.placeholder.com/100'; }}
                     />
                     <div className="flex-1 min-w-0">
-                      <Link to={`/products/${prod._id}`} className="font-semibold text-gray-800 text-sm hover:text-yellow-600 transition-colors line-clamp-1">
+                      <Link to={`/products/${prod._id}`} className="font-semibold text-gray-800 text-sm hover:text-green-600 transition-colors line-clamp-1">
                         {prod.title}
                       </Link>
                       <p className="text-gray-500 text-xs mt-0.5">{prod.weight}</p>
@@ -130,7 +130,7 @@ export default function CartPage() {
                           value={couponCode}
                           onChange={(e) => setCouponCode(e.target.value.toUpperCase())}
                           placeholder="SAVE500"
-                          className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400 uppercase"
+                          className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400 uppercase"
                         />
                         <button
                           onClick={handleApplyCoupon}
@@ -167,7 +167,7 @@ export default function CartPage() {
                 </div>
 
                 <Link to="/checkout"
-                  className="mt-6 w-full flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-bold py-3 rounded-xl transition-colors">
+                  className="mt-6 w-full flex items-center justify-center gap-2 bg-green-400 hover:bg-green-300 text-gray-900 font-bold py-3 rounded-xl transition-colors">
                   Proceed to Checkout <FiArrowRight size={16} />
                 </Link>
               </div>

@@ -3,7 +3,7 @@ export const Loader = ({ size = 'md', text = 'Loading...' }) => {
   const sizes = { sm: 'w-5 h-5', md: 'w-8 h-8', lg: 'w-12 h-12' };
   return (
     <div className="flex flex-col items-center justify-center py-12 gap-3">
-      <div className={`${sizes[size]} border-3 border-gray-200 border-t-yellow-400 rounded-full animate-spin`} />
+      <div className={`${sizes[size]} border-3 border-gray-200 border-t-green-400 rounded-full animate-spin`} />
       {text && <p className="text-gray-500 text-sm">{text}</p>}
     </div>
   );
@@ -13,7 +13,7 @@ export const Loader = ({ size = 'md', text = 'Loading...' }) => {
 export const PageLoader = () => (
   <div className="fixed inset-0 bg-white/80 backdrop-blur-sm z-50 flex items-center justify-center">
     <div className="text-center">
-      <div className="w-12 h-12 border-4 border-gray-200 border-t-yellow-400 rounded-full animate-spin mx-auto mb-3" />
+      <div className="w-12 h-12 border-4 border-gray-200 border-t-green-400 rounded-full animate-spin mx-auto mb-3" />
       <p className="text-gray-600 font-medium">Loading...</p>
     </div>
   </div>
@@ -26,7 +26,7 @@ export const StatusBadge = ({ status }) => {
     Processing: 'bg-purple-100 text-purple-700',
     Confirmed: 'bg-indigo-100 text-indigo-700',
     'Vehicle Assigned': 'bg-orange-100 text-orange-700',
-    'Loading Started': 'bg-yellow-100 text-yellow-700',
+    'Loading Started': 'bg-green-100 text-green-700',
     'Out for Delivery': 'bg-cyan-100 text-cyan-700',
     'Reached Destination': 'bg-teal-100 text-teal-700',
     Delivered: 'bg-green-100 text-green-700',
@@ -72,9 +72,9 @@ export const Modal = ({ isOpen, onClose, title, children, size = 'md' }) => {
 };
 
 // Stat card for dashboards
-export const StatCard = ({ title, value, icon, color = 'yellow', sub }) => {
+export const StatCard = ({ title, value, icon, color = 'green', sub }) => {
   const colors = {
-    yellow: 'bg-yellow-50 text-yellow-600',
+    green: 'bg-green-50 text-green-600',
     green: 'bg-green-50 text-green-600',
     blue: 'bg-blue-50 text-blue-600',
     red: 'bg-red-50 text-red-600',
@@ -102,8 +102,8 @@ export const FormInput = ({ label, error, ...props }) => (
     {label && <label className="block text-sm font-medium text-gray-700 mb-1">{label}</label>}
     <input
       {...props}
-      className={`w-full border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all
-        ${error ? 'border-red-400 bg-red-50' : 'border-gray-300 bg-white focus:border-yellow-400'}`}
+      className={`w-full border rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-400 transition-all
+        ${error ? 'border-red-400 bg-red-50' : 'border-gray-300 bg-white focus:border-green-400'}`}
     />
     {error && <p className="text-red-500 text-xs mt-1">{error}</p>}
   </div>
@@ -126,7 +126,7 @@ export const Pagination = ({ page, pages, onPageChange }) => {
           key={p}
           onClick={() => onPageChange(p)}
           className={`w-9 h-9 text-sm rounded-lg font-medium transition-colors
-            ${p === page ? 'bg-yellow-400 text-gray-900' : 'border border-gray-300 hover:bg-gray-50'}`}
+            ${p === page ? 'bg-green-400 text-gray-900' : 'border border-gray-300 hover:bg-gray-50'}`}
         >
           {p}
         </button>

@@ -74,7 +74,7 @@ export default function ProductsPage() {
                 value={search}
                 onChange={(e) => updateParams({ search: e.target.value })}
                 placeholder="Search products..."
-                className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 pl-10 text-sm focus:outline-none focus:border-yellow-400"
+                className="w-full bg-gray-50 border border-gray-200 rounded-lg px-4 py-2.5 pl-10 text-sm focus:outline-none focus:border-green-400"
               />
               {search && (
                 <button onClick={() => updateParams({ search: '' })} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
@@ -91,7 +91,7 @@ export default function ProductsPage() {
                   onClick={() => updateParams({ category: cat })}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
                     category === cat
-                      ? 'bg-yellow-400 text-gray-900'
+                      ? 'bg-green-400 text-gray-900'
                       : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                   }`}
                 >
@@ -104,7 +104,7 @@ export default function ProductsPage() {
             <select
               value={sort}
               onChange={(e) => updateParams({ sort: e.target.value })}
-              className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-yellow-400"
+              className="bg-gray-50 border border-gray-200 rounded-lg px-3 py-2.5 text-sm text-gray-700 focus:outline-none focus:border-green-400"
             >
               {sortOptions.map((o) => (
                 <option key={o.value} value={o.value}>{o.label}</option>
@@ -129,7 +129,7 @@ export default function ProductsPage() {
                   onClick={() => { updateParams({ category: cat }); setShowFilters(false); }}
                   className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                     category === cat
-                      ? 'bg-yellow-400 text-gray-900'
+                      ? 'bg-green-400 text-gray-900'
                       : 'bg-gray-100 text-gray-600'
                   }`}
                 >

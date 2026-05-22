@@ -49,7 +49,7 @@ export default function AdminCoupons() {
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-bold text-gray-800">Coupons</h2>
         <button onClick={() => setModalOpen(true)}
-          className="flex items-center gap-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-semibold px-4 py-2 rounded-lg text-sm transition-colors">
+          className="flex items-center gap-2 bg-green-400 hover:bg-green-300 text-gray-900 font-semibold px-4 py-2 rounded-lg text-sm transition-colors">
           <FiPlus size={16} /> Add Coupon
         </button>
       </div>
@@ -63,7 +63,7 @@ export default function AdminCoupons() {
               <div className="flex items-start justify-between mb-3">
                 <div>
                   <div className="flex items-center gap-2">
-                    <FiTag className="text-yellow-500" size={18} />
+                    <FiTag className="text-green-500" size={18} />
                     <span className="font-bold text-gray-800 text-lg">{c.code}</span>
                   </div>
                   <p className="text-xs text-gray-400 mt-0.5">
@@ -93,12 +93,12 @@ export default function AdminCoupons() {
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Coupon Code</label>
             <input type="text" value={form.code} onChange={(e) => setForm({ ...form, code: e.target.value.toUpperCase() })}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400 uppercase" required />
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400 uppercase" required />
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Discount Type</label>
             <select value={form.discountType} onChange={(e) => setForm({ ...form, discountType: e.target.value })}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400">
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400">
               <option value="flat">Flat (₹)</option>
               <option value="percent">Percentage (%)</option>
             </select>
@@ -106,30 +106,30 @@ export default function AdminCoupons() {
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Discount Value</label>
             <input type="number" value={form.discountValue} onChange={(e) => setForm({ ...form, discountValue: e.target.value })}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400" min={1} required />
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400" min={1} required />
           </div>
           <div className="grid grid-cols-2 gap-4">
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Min Cart Value (₹)</label>
               <input type="number" value={form.minCartValue} onChange={(e) => setForm({ ...form, minCartValue: e.target.value })}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400" min={0} />
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400" min={0} />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1">Max Uses</label>
               <input type="number" value={form.maxUses} onChange={(e) => setForm({ ...form, maxUses: e.target.value })}
-                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400" min={1} />
+                className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400" min={1} />
             </div>
           </div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">Expiry Date (optional)</label>
             <input type="date" value={form.expiresAt} onChange={(e) => setForm({ ...form, expiresAt: e.target.value })}
-              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-yellow-400" />
+              className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-green-400" />
           </div>
           <div className="flex justify-end gap-3 pt-2">
             <button type="button" onClick={() => setModalOpen(false)}
               className="px-4 py-2 text-sm text-gray-600 hover:bg-gray-100 rounded-lg">Cancel</button>
             <button type="submit"
-              className="px-6 py-2 bg-yellow-400 hover:bg-yellow-300 text-gray-900 font-semibold text-sm rounded-lg">
+              className="px-6 py-2 bg-green-400 hover:bg-green-300 text-gray-900 font-semibold text-sm rounded-lg">
               Create
             </button>
           </div>

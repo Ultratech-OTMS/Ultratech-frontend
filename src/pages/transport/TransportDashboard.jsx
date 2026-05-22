@@ -34,13 +34,13 @@ export default function TransportDashboard() {
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-bold text-gray-800">Dashboard</h2>
         <button onClick={fetchDeliveries}
-          className="flex items-center gap-1 text-gray-500 hover:text-yellow-600 text-sm transition-colors">
+          className="flex items-center gap-1 text-gray-500 hover:text-green-600 text-sm transition-colors">
           <FiRefreshCw size={14} /> Refresh
         </button>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-        <StatCard title="Active Deliveries" value={active.length} icon={<FiTruck size={22} />} color="yellow" />
+        <StatCard title="Active Deliveries" value={active.length} icon={<FiTruck size={22} />} color="green" />
         <StatCard title="Completed" value={completed.length} icon={<FiCheckCircle size={22} />} color="green" />
         <StatCard title="Failed" value={failed.length} icon={<FiXCircle size={22} />} color="red" />
       </div>
@@ -75,7 +75,7 @@ export default function TransportDashboard() {
           </div>
         )}
         <div className="mt-4 text-center">
-          <Link to="/transport/deliveries" className="text-yellow-600 hover:text-yellow-700 text-sm font-medium">
+          <Link to="/transport/deliveries" className="text-green-600 hover:text-green-700 text-sm font-medium">
             View All Deliveries →
           </Link>
         </div>

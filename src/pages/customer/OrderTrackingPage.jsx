@@ -52,10 +52,10 @@ export default function OrderTrackingPage() {
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
         <div className="flex items-center gap-2 text-sm text-gray-500 mb-6">
-          <Link to="/orders" className="hover:text-yellow-600">My Orders</Link>
+          <Link to="/orders" className="hover:text-green-600">My Orders</Link>
           <FiChevronRight size={12} />
           <span className="text-gray-800 font-medium">Order #{order._id.slice(-8).toUpperCase()}</span>
-          <button onClick={fetchData} className="ml-auto text-gray-400 hover:text-yellow-600 transition-colors" title="Refresh">
+          <button onClick={fetchData} className="ml-auto text-gray-400 hover:text-green-600 transition-colors" title="Refresh">
             <FiRefreshCw size={14} />
           </button>
         </div>
@@ -78,17 +78,17 @@ export default function OrderTrackingPage() {
                 return (
                   <div key={status} className="relative flex gap-4 pb-6 last:pb-0">
                     {idx < (isCancelled ? statusFlow.length : statusFlow.length - 1) && (
-                      <div className={`absolute left-[15px] top-8 w-0.5 h-full ${isPast && !isCancelled ? 'bg-yellow-400' : 'bg-gray-200'}`} />
+                      <div className={`absolute left-[15px] top-8 w-0.5 h-full ${isPast && !isCancelled ? 'bg-green-400' : 'bg-gray-200'}`} />
                     )}
                     <div className={`relative z-10 w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
                       isCancelledStep ? 'bg-red-100 text-red-600' :
-                      isCurrent ? 'bg-yellow-400 text-gray-900 ring-4 ring-yellow-100' :
-                      isPast ? 'bg-yellow-400 text-gray-900' : 'bg-gray-100 text-gray-400'
+                      isCurrent ? 'bg-green-400 text-gray-900 ring-4 ring-green-100' :
+                      isPast ? 'bg-green-400 text-gray-900' : 'bg-gray-100 text-gray-400'
                     }`}>
                       {isCancelledStep ? <FiX size={14} /> : <Icon size={14} />}
                     </div>
                     <div className="flex-1 pt-1">
-                      <p className={`font-semibold text-sm ${isCurrent ? 'text-yellow-600' : isPast ? 'text-gray-800' : 'text-gray-400'}`}>
+                      <p className={`font-semibold text-sm ${isCurrent ? 'text-green-600' : isPast ? 'text-gray-800' : 'text-gray-400'}`}>
                         {status}
                       </p>
                       {(() => {
